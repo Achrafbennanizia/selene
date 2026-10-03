@@ -7,6 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { TransferArc } from "@/components/TransferArc";
 import { CONTENT } from "@/lib/content";
@@ -45,12 +46,12 @@ export function Trajectory() {
           </p>
           <p className="mt-2 max-w-md text-[12px] leading-relaxed text-muted sm:mt-3 sm:text-[13px]">
             {CONTENT.trajNote}{" "}
-            <a
+            <Link
               href="/trajectory"
               className="text-signal underline-offset-4 hover:underline"
             >
               Open full transfer page →
-            </a>
+            </Link>
           </p>
         </Reveal>
 

@@ -7,6 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
+import Link from "next/link";
 import { asset } from "@/lib/asset";
 import { CONTENT } from "@/lib/content";
 
@@ -198,12 +199,12 @@ export function Hero() {
               >
                 {CONTENT.heroCta}
               </a>
-              <a
+              <Link
                 href="/trajectory"
                 className="btn-ghost focus-ring min-h-12 w-full touch-manipulation bg-void/50 backdrop-blur-sm sm:min-h-11 sm:w-auto"
               >
                 {CONTENT.heroSecondary}
-              </a>
+              </Link>
             </motion.div>
           </div>
         </motion.div>

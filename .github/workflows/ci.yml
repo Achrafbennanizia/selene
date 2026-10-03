@@ -30,9 +30,10 @@ jobs:
         run: npm run typecheck
 
       - name: Build (GitHub Pages)
-        run: npm run build
+        run: npm run build:pages
         env:
           GITHUB_PAGES: "true"
+          NEXT_PUBLIC_BASE_PATH: "/selene"
 
       - name: Verify export
         run: test -f out/index.html && test -d out/trajectory
