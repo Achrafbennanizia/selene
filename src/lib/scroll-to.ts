@@ -47,7 +47,7 @@ export function smoothScrollTo(
   target: number | string | HTMLElement,
   options?: { duration?: number },
 ) {
-  const duration = options?.duration ?? 2.05;
+  const duration = options?.duration ?? 1.45;
 
   if (prefersReducedMotion()) {
     if (typeof target === "number") window.scrollTo(0, target);

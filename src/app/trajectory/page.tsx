@@ -68,28 +68,31 @@ export default function TrajectoryPage() {
       <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 pt-[calc(1rem+env(safe-area-inset-top))] sm:px-6 sm:py-5 md:px-10">
         <Link
           href="/"
-          className="focus-ring display copy-legible min-h-11 content-center text-xs tracking-[0.28em] sm:text-sm"
+          className="nav-brand focus-ring display copy-legible min-h-11 content-center text-xs tracking-[0.28em] sm:text-sm"
         >
           SELENE
         </Link>
         <nav className="hidden items-center gap-5 text-[11px] tracking-[0.18em] text-[#d8d3c9] uppercase sm:flex">
-          <Link href="/#log" className="focus-ring copy-legible hover:text-foam">
+          <Link href="/#log" className="nav-link focus-ring copy-legible">
             Facts
           </Link>
           <span className="copy-legible text-signal">Trajectory</span>
           <Link
             href="/#missions"
-            className="focus-ring copy-legible hover:text-foam"
+            className="nav-link focus-ring copy-legible"
           >
             Heritage
           </Link>
-          <Link href="/#reserve" className="btn-signal focus-ring min-h-10 px-4">
+          <Link
+            href="/#reserve"
+            className="btn-signal nav-cta focus-ring min-h-10 px-4"
+          >
             Briefing list
           </Link>
         </nav>
         <Link
           href="/#reserve"
-          className="btn-signal focus-ring min-h-11 touch-manipulation px-3 text-[10px] sm:hidden"
+          className="btn-signal nav-cta focus-ring min-h-11 touch-manipulation px-3 text-[10px] sm:hidden"
         >
           Briefing
         </Link>

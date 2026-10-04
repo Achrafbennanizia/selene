@@ -31,9 +31,9 @@ export function Trajectory() {
     <section
       id="trajectory"
       ref={ref}
-      className="section-panel relative overflow-hidden bg-ink px-4 py-16 sm:px-6 sm:py-20 md:px-10 md:py-24"
+      className="section-panel relative overflow-hidden bg-ink px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-16"
     >
-      <div className="mx-auto flex h-full max-w-6xl flex-col justify-center">
+      <div className="mx-auto flex w-full max-w-6xl flex-col justify-center">
         <Reveal>
           <p className="text-[11px] font-semibold tracking-[0.28em] text-signal uppercase">
             {CONTENT.trajEyebrow}

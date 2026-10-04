@@ -24,7 +24,7 @@ export function Nav() {
   const onHash = (id: string) => (e: React.MouseEvent) => {
     if (!onHome) return;
     e.preventDefault();
-    smoothScrollToId(id, 2.15);
+    smoothScrollToId(id, 1.45);
   };
 
   return (
@@ -33,7 +33,7 @@ export function Nav() {
         <div className="pointer-events-auto mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4 md:px-10">
           <Link
             href="/"
-            className="focus-ring display min-h-11 min-w-11 touch-manipulation content-center text-xs tracking-[0.28em] text-foam sm:text-sm"
+            className="nav-brand focus-ring display min-h-11 min-w-11 touch-manipulation content-center text-xs tracking-[0.28em] text-foam sm:text-sm"
           >
             SELENE
           </Link>
@@ -47,7 +47,7 @@ export function Nav() {
                 key={link.href}
                 href={link.href}
                 onClick={link.id ? onHash(link.id) : undefined}
-                className="focus-ring transition-colors hover:text-foam"
+                className="nav-link focus-ring"
               >
                 {desktopLabel(link.label)}
               </Link>
@@ -57,7 +57,7 @@ export function Nav() {
           <Link
             href="/#reserve"
             onClick={onHash("reserve")}
-            className="btn-signal focus-ring min-h-11 shrink-0 touch-manipulation px-3 text-[10px] sm:px-5 sm:text-[0.72rem]"
+            className="btn-signal nav-cta focus-ring min-h-11 shrink-0 touch-manipulation px-3 text-[10px] sm:px-5 sm:text-[0.72rem]"
           >
             <span className="sm:hidden">Briefing</span>
             <span className="hidden sm:inline">Join briefing</span>
@@ -75,7 +75,7 @@ export function Nav() {
               key={link.href}
               href={link.href}
               onClick={link.id ? onHash(link.id) : undefined}
-              className="focus-ring flex min-h-14 touch-manipulation flex-col items-center justify-center gap-0.5 px-1 text-[10px] tracking-[0.14em] text-muted uppercase active:text-foam"
+              className="nav-dock-item focus-ring flex min-h-14 touch-manipulation flex-col items-center justify-center gap-0.5 px-1 text-[10px] tracking-[0.14em] text-muted uppercase"
             >
               {link.label}
             </Link>

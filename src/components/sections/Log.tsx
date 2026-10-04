@@ -8,9 +8,9 @@ export function Log() {
   return (
     <section
       id="log"
-      className="section-panel section-scrim relative px-4 py-16 sm:px-6 sm:py-20 md:px-10 md:py-24"
+      className="section-panel section-scrim relative px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-16"
     >
-      <div className="mx-auto grid h-full max-w-6xl content-center gap-8 md:grid-cols-[0.95fr_1.05fr] md:gap-12 lg:gap-16">
+      <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-center md:gap-12 lg:gap-16">
         <Reveal>
           <p className="text-[11px] font-semibold tracking-[0.28em] text-signal uppercase">
             {CONTENT.logEyebrow}

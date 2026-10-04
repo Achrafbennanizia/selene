@@ -7,7 +7,6 @@ import { cinematicEase, registerLenis } from "@/lib/scroll-to";
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // Native touch scroll feels better on phones — programmatic jumps still animate
     const coarse = window.matchMedia("(pointer: coarse)").matches;
     const narrow = window.matchMedia("(max-width: 767px)").matches;
     if (reduced || coarse || narrow) {
@@ -16,12 +15,12 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     }
 
     const lenis = new Lenis({
-      // Slow, buttery wheel inertia
-      duration: 1.85,
+      duration: 1.15,
       easing: cinematicEase,
       smoothWheel: true,
-      wheelMultiplier: 0.78,
+      wheelMultiplier: 0.92,
       touchMultiplier: 1,
+      syncTouch: false,
     });
 
     registerLenis(lenis);

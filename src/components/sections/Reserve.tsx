@@ -7,7 +7,7 @@ export function Reserve() {
   return (
     <section
       id="reserve"
-      className="section-panel relative overflow-hidden bg-ink px-4 py-14 sm:px-6 sm:py-16 md:px-10 md:py-20"
+      className="section-panel relative overflow-hidden bg-ink px-4 py-10 pb-[calc(1.25rem+env(safe-area-inset-bottom))] sm:px-6 sm:py-12 md:px-10 md:py-16 md:pb-16"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-50"
@@ -18,7 +18,7 @@ export function Reserve() {
         aria-hidden
       />
 
-      <div className="relative mx-auto grid h-full max-w-6xl content-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-12">
+      <div className="relative mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-12">
         <Reveal>
           <p className="text-[11px] font-semibold tracking-[0.28em] text-signal uppercase">
             {CONTENT.reserveEyebrow}
