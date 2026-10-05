@@ -60,6 +60,8 @@ export const CONTENT = {
       title: "Earthrise",
       line: "Apollo 8 · 24 Dec 1968 — first crewed lunar orbit.",
       photo: "/photos/earthrise.jpg",
+      width: 1280,
+      height: 1280,
       credit: "PD · NASA Apollo 8",
     },
     {
@@ -67,6 +69,8 @@ export const CONTENT = {
       title: "Tranquility Base",
       line: "Apollo 11 LM · 0.674°N 23.473°E · Mare Tranquillitatis.",
       photo: "/photos/astronaut.jpg",
+      width: 1280,
+      height: 1280,
       credit: "PD · NASA Apollo 11",
     },
     {
@@ -74,6 +78,8 @@ export const CONTENT = {
       title: "Blue Marble",
       line: "Apollo 17 — whole-Earth plate from cislunar space.",
       photo: "/photos/earth-space.jpg",
+      width: 1280,
+      height: 1281,
       credit: "PD · NASA Apollo 17",
     },
     {
@@ -81,6 +87,8 @@ export const CONTENT = {
       title: "Saturn departure",
       line: "Apollo 11 launch — the stack that started the three-day transfer.",
       photo: "/photos/launch.jpg",
+      width: 1280,
+      height: 1600,
       credit: "PD · NASA Apollo 11",
     },
     {
@@ -88,6 +96,8 @@ export const CONTENT = {
       title: "Near side",
       line: "Full Moon plate — the face every outbound crew leaves behind.",
       photo: "/photos/moon-surface.jpg",
+      width: 1280,
+      height: 1216,
       credit: "PD · Wikimedia / NASA era",
     },
   ],

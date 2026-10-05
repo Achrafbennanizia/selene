@@ -15,7 +15,7 @@ export function formatKm(progress: number) {
   return `${Math.round(p * TOTAL_KM).toLocaleString("en-US")} km`;
 }
 
-/** Earth → Moon transfer arc used by boot + full trajectory page. */
+/** Earth → Moon transfer arc used by the boot sequence and the trajectory section. */
 export function TransferArc({ progress, className }: Props) {
   const pathLength = Math.min(1, Math.max(0, progress));
 

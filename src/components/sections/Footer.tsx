@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CONTENT } from "@/lib/content";
 
 export function Footer() {
@@ -17,9 +16,9 @@ export function Footer() {
           <a href="#log" className="focus-ring hover:text-foam">
             Facts
           </a>
-          <Link href="/trajectory" className="focus-ring hover:text-foam">
+          <a href="#trajectory" className="focus-ring hover:text-foam">
             Trajectory
-          </Link>
+          </a>
           <a href="#missions" className="focus-ring hover:text-foam">
             Heritage
           </a>

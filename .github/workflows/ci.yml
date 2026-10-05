@@ -36,4 +36,4 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: "/selene"
 
       - name: Verify export
-        run: test -f out/index.html && test -d out/trajectory
+        run: test -f out/index.html

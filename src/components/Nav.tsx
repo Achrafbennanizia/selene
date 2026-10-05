@@ -6,7 +6,7 @@ import { smoothScrollToId } from "@/lib/scroll-to";
 
 const LINKS = [
   { href: "/#log", id: "log", label: "Facts" },
-  { href: "/trajectory", id: null, label: "Arc" },
+  { href: "/#trajectory", id: "trajectory", label: "Arc" },
   { href: "/#missions", id: "missions", label: "Heritage" },
   { href: "/#reserve", id: "reserve", label: "Brief" },
 ] as const;
@@ -23,6 +23,7 @@ export function Nav() {
 
   const onHash = (id: string) => (e: React.MouseEvent) => {
     if (!onHome) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     e.preventDefault();
     smoothScrollToId(id, 1.45);
   };
@@ -35,7 +36,7 @@ export function Nav() {
             href="/"
             className="nav-brand focus-ring display min-h-11 min-w-11 touch-manipulation content-center text-xs tracking-[0.28em] text-foam sm:text-sm"
           >
-            SELENE
+            <span translate="no">SELENE</span>
           </Link>
 
           <nav

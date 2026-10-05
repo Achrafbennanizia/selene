@@ -26,6 +26,8 @@ export function Log() {
             <img
               src={asset("/photos/astronaut.jpg")}
               alt="Apollo astronaut on the lunar surface — NASA public domain"
+              width={1280}
+              height={1280}
               className="aspect-[4/3] h-full w-full object-cover"
               loading="lazy"
               decoding="async"

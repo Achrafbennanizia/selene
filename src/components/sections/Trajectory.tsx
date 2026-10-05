@@ -7,14 +7,16 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { TransferArc } from "@/components/TransferArc";
 import { CONTENT } from "@/lib/content";
+import { useMotionPause } from "@/lib/motion-pause";
 
 export function Trajectory() {
   const ref = useRef<HTMLElement>(null);
-  const reduced = useReducedMotion();
+  const systemReduced = useReducedMotion();
+  const { paused } = useMotionPause();
+  const reduced = Boolean(systemReduced) || paused;
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start 80%", "end start"],
@@ -45,13 +47,7 @@ export function Trajectory() {
             {CONTENT.trajBody}
           </p>
           <p className="mt-2 max-w-md text-[12px] leading-relaxed text-muted sm:mt-3 sm:text-[13px]">
-            {CONTENT.trajNote}{" "}
-            <Link
-              href="/trajectory"
-              className="text-signal underline-offset-4 hover:underline"
-            >
-              Open full transfer page →
-            </Link>
+            {CONTENT.trajNote}
           </p>
         </Reveal>
 

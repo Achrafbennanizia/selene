@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { MotionPauseProvider } from "@/lib/motion-pause";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -20,6 +21,11 @@ export const metadata: Metadata = {
     "384,400 km mean Earth–Moon distance. Research-backed briefing for the first private seats past Earth orbit — NASA facts, honest commercial timeline, interest list.",
 };
 
+export const viewport: Viewport = {
+  themeColor: "#05060a",
+  colorScheme: "dark",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${space.variable} ${manrope.variable}`}>
-      <body className="bg-void text-foam antialiased">{children}</body>
+      <body className="bg-void text-foam antialiased">
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <MotionPauseProvider>{children}</MotionPauseProvider>
+      </body>
     </html>
   );
 }

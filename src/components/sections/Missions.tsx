@@ -37,6 +37,8 @@ export function Missions() {
                   <img
                     src={asset(mission.photo)}
                     alt=""
+                    width={mission.width}
+                    height={mission.height}
                     className="h-full w-full object-cover opacity-95 transition duration-700 group-hover:scale-[1.03]"
                     loading="lazy"
                     decoding="async"

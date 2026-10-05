@@ -1,9 +1,22 @@
 "use client";
 
+import { useState, type FormEvent } from "react";
 import { Reveal } from "@/components/Reveal";
 import { CONTENT } from "@/lib/content";
 
 export function Reserve() {
+  const [status, setStatus] = useState("");
+
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const email = String(data.get("email") || "");
+    if (!email.includes("@")) {
+      setStatus("Enter a work email with an @.");
+      return;
+    }
+    setStatus("Request received. We’ll send the briefing when the next window opens.");
+  }
   return (
     <section
       id="reserve"
@@ -34,9 +47,7 @@ export function Reserve() {
         <Reveal delay={0.08}>
           <form
             className="rounded-[24px] border border-line bg-void/95 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.45)] sm:p-8"
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
+            onSubmit={onSubmit}
           >
             <label className="block">
               <span className="text-[11px] tracking-[0.18em] text-muted uppercase">
@@ -47,7 +58,7 @@ export function Reserve() {
                 name="name"
                 autoComplete="name"
                 className="focus-ring mt-2 w-full border-b border-line bg-transparent py-3 text-foam outline-none placeholder:text-muted/60"
-                placeholder="Alex Rivera"
+                placeholder="Alex Rivera…"
               />
             </label>
             <label className="mt-6 block">
@@ -59,8 +70,9 @@ export function Reserve() {
                 type="email"
                 name="email"
                 autoComplete="email"
+                spellCheck={false}
                 className="focus-ring mt-2 w-full border-b border-line bg-transparent py-3 text-foam outline-none placeholder:text-muted/60"
-                placeholder="alex@fund.com"
+                placeholder="alex@fund.com…"
               />
             </label>
             <label className="mt-6 block">
@@ -80,8 +92,8 @@ export function Reserve() {
             <button type="submit" className="btn-signal focus-ring mt-8 min-h-12 w-full">
               {CONTENT.reserveCta}
             </button>
-            <p className="mt-4 text-center text-[12px] leading-relaxed text-muted">
-              {CONTENT.reserveDisclaimer}
+            <p className="mt-4 text-center text-[12px] leading-relaxed text-muted" aria-live="polite">
+              {status || CONTENT.reserveDisclaimer}
             </p>
           </form>
         </Reveal>

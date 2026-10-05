@@ -27,6 +27,7 @@
 
 html {
   scroll-padding-top: 0;
+  color-scheme: dark;
   /* JS threshold snap only — CSS snap fights Lenis */
   scroll-behavior: auto;
 }
@@ -96,6 +97,7 @@ a {
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 0.94;
+  text-wrap: balance;
 }
 
 /* Readable over photo / gradient plates */
@@ -271,4 +273,28 @@ a {
   .animate-reel {
     animation: none;
   }
+}
+
+html.motion-paused .animate-reel {
+  animation: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 80;
+  transform: translateY(-150%);
+  border-radius: 999px;
+  background: #f4f1ea;
+  color: #05060a;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid #8eb8ff;
+  outline-offset: 2px;
 }

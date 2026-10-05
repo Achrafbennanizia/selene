@@ -19,7 +19,7 @@ export default function Home() {
         <div className="grain" aria-hidden />
         <Nav />
         <ScrollAssist />
-        <main>
+        <main id="main" tabIndex={-1}>
           <Hero />
           <Log />
           <Trajectory />

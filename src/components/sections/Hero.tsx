@@ -7,15 +7,17 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import Link from "next/link";
 import { asset } from "@/lib/asset";
+import { useMotionPause } from "@/lib/motion-pause";
 import { CONTENT } from "@/lib/content";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
-  const reduced = useReducedMotion();
+  const systemReduced = useReducedMotion();
+  const { paused } = useMotionPause();
+  const reduced = Boolean(systemReduced) || paused;
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -48,6 +50,8 @@ export function Hero() {
           <img
             src={asset("/photos/earthrise.jpg")}
             alt=""
+            width={1280}
+            height={1280}
             className="h-full w-full object-cover opacity-[0.45]"
             decoding="async"
           />
@@ -74,6 +78,8 @@ export function Hero() {
             <img
               src={asset("/photos/earth-space.jpg")}
               alt=""
+              width={1280}
+              height={1281}
               className="h-full w-full scale-110 object-cover"
               decoding="async"
             />
@@ -89,6 +95,8 @@ export function Hero() {
           <img
             src={asset("/photos/moon-surface.jpg")}
             alt=""
+            width={1280}
+            height={1216}
             className="absolute inset-0 h-full w-full object-cover object-[center_70%] opacity-70"
             decoding="async"
           />
@@ -199,12 +207,12 @@ export function Hero() {
               >
                 {CONTENT.heroCta}
               </a>
-              <Link
-                href="/trajectory"
+              <a
+                href="#trajectory"
                 className="btn-ghost focus-ring min-h-12 w-full touch-manipulation bg-void/50 backdrop-blur-sm sm:min-h-11 sm:w-auto"
               >
                 {CONTENT.heroSecondary}
-              </Link>
+              </a>
             </motion.div>
           </div>
         </motion.div>
